@@ -1,0 +1,35 @@
+input[type=submit] {
+	margin-top: 2em;
+	display: block;
+	width: 100%;
+}
+
+form.register div, form.signin div, form.edit_info div, form.edit_password div {
+	position: relative;
+	margin-top: 1.5em;
+}
+
+.error {
+	position: absolute;
+	top: 45px;
+	left: 0;
+	color: tomato;
+	font-size: 12px;
+}
+
+span.error.taken {
+	top: 62px;
+}
+	form.comment textarea.form-control {
+		height: 130px;
+	}
+
+	form.comment input[type=submit] {
+		width: 200px;
+	}
+		div.row div.col-sm-10 p {
+			margin-top: -1em;
+		}
+		div.row div.col-sm-10 p.comment-body {
+			margin-left: 2em;
+		}
