@@ -16,13 +16,14 @@
 	<div class="wrapper">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand"><?=isset($user) ? ucfirst($user->user_level) : ""?> Dashboard</a>
+
+				<a href="<?=isset($user) && $user->user_level=='admin'? '/admin':'/users/user_dashboard'?>" class="navbar-brand"><?=isset($user) ? ucfirst($user->user_level) : ""?> Dashboard</a>
 <?php 			if($user):?>
 					<a class="nav-link active text-light" href="/users/edit_user/<?=$user->id?>">Profile</a>
 <?php 			endif ?>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>
+				</a>
 				<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 					<div class="navbar-nav">
 <?php 					if(isset($user)): ?>

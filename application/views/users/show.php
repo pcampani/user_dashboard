@@ -1,6 +1,6 @@
 <?php 
 	defined('BASEPATH') OR exit('No direct script access allowed');
-	$user = $this->session->userdata("user");
+	$logged_in_user = $this->session->userdata("user");
 	$this->load->view("templates/header");
 ?>
 <div class="container mt-4">
@@ -20,7 +20,17 @@
 <?php foreach($messages as $message):?>
 	<div class="container mt-4">
 		<div class="card p-4">
-			<h5 class="text-primary"><?= $message->name . " wrote " . date("F jS, h:i A", strtotime($message->created_at))?> </h5>
+			<div class="row">
+				<div class="col-sm-5">
+					<h5 class="text-primary"><?= $message->name . " wrote " . date("F jS, h:i A", strtotime($message->created_at))?></h5>
+				</div>
+				<div class="col-sm-5"></div>
+<?php 			if ($message->user_id == $logged_in_user->id): ?>
+					<div class="col-sm-2 justify-content-end">
+						<a href="" class="btn btn-danger btn-md text-right">Delete</a>
+					</div>
+<?php			endif ?>
+			</div>
 		<div class="card-body">
 			<p><?= $message->message?></p>
 			<p class="text-success bg-dark text-light p-2 mb-2">Post Comments</p>

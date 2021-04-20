@@ -1,6 +1,6 @@
 <?php 
 	defined('BASEPATH') OR exit('No direct script access allowed');
-	if($this->session->userdata("user") == null) {
+	if($this->session->userdata("user") == null && $this->session->userdata("user")->user_level != "admin") {
 		redirect("users");
 	}
 	$success = $this->session->flashdata("info_success");

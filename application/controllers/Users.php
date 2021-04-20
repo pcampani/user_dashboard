@@ -258,6 +258,4 @@ class Users extends CI_Controller {
 		$this->user->delete($id);
 		redirect("admin");
 	}
-
-	
 }
